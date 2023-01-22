@@ -1,0 +1,142 @@
+<html>
+<head>
+	<title>Math Operations</title>
+	<style>
+	body {
+		background-color: yellow;
+}
+	form{
+			position: relative;
+			display: inline-block;
+			left: 45%;
+			top: 45%;
+			}
+	div{
+	position: relative;
+			display: inline-block;
+			left: 45%;
+			top: 45%;
+			}
+	</style>
+	<script>
+		function add(){
+			var n1 = document.frmMath.txtNum1.value;
+			var n2 = document.frmMath.txtNum2.value;
+			
+			var sum;
+			
+			sum = +n1 + +n2;
+			
+			if((n1!="") && (n2!="")){
+				var x = document.getElementById("result");
+				x.innerHTML = "Sum: " + sum;
+			}
+			
+			if(n1==""){
+				alert(" empty!");
+			}
+			
+			if(n2==""){
+				alert("Second number is empty!");
+			}
+		}
+		
+		function subtract(){
+			var n1 = document.frmMath.txtNum1.value;
+			var n2 = document.frmMath.txtNum2.value;
+			
+			var difference;
+			
+			difference = +n1 - +n2;
+			
+			if((n1!="") && (n2!="")){
+				var x = document.getElementById("result");
+				x.innerHTML = "Difference: " + difference;
+			}
+			
+			if(n1==""){
+				alert("First number is empty!");
+			}
+			
+			if(n2==""){
+				alert("Second number is empty!");
+			}
+		}
+		
+		function multiply(){
+			var n1 = document.frmMath.txtNum1.value;
+			var n2 = document.frmMath.txtNum2.value;
+			
+			var product;
+			
+			product = +n1 * +n2;
+			
+			if((n1!="") && (n2!="")){
+				var x = document.getElementById("result");
+				x.innerHTML = "Procuct: " + product;
+			}
+			
+			if(n1==""){
+				alert("First number is empty!");
+			}
+			
+			if(n2==""){
+				alert("Second number is empty!");
+			}
+		}
+		
+		function divide(){
+			var n1 = document.frmMath.txtNum1.value;
+			var n2 = document.frmMath.txtNum2.value;
+			
+			var quotient;
+			
+			quotient = +n1 / +n2;
+			
+			if((n1!="") && (n2!="")){
+				var x = document.getElementById("result");
+				x.innerHTML = "Quotient: " + quotient;
+			}
+			
+			if(n1==""){
+				alert("First number is empty!");
+			}
+			
+			if(n2==""){
+				alert("Second number is empty!");
+			}
+		}
+		
+		
+		function clr(){
+			document.getElementById("result").innerHTML = "";
+		}
+		function back(){
+		location.href="Finals.html";
+    }
+	</script>
+</head>
+
+<body>
+	
+	<form name="frmMath">
+		<label>First Number:</label>
+		<input type="number" min="1" name="txtNum1" />
+		<br/>
+		<label>Second Number:</label>
+		<input type="number" min="1" name="txtNum2" />
+		<br/>
+		<input type="button" name="btnAdd" value="Add" onclick="add()" />
+		<input type="button" name="btnSubtract" value="Subtract" onclick="subtract()" />
+		<input type="button" name="btnMultiply" value="Multiply" onclick="multiply()" />
+		<input type="button" name="btnDivide" value="Divide" onclick="divide()" />
+		<input type="reset" name="btnClr" value="Clear" onclick="clr()" />
+	</form>
+	</br>
+	<div id="result"></div></br>
+	<div></br>
+	</br>
+<input type="button" value="Back" onclick="back()">
+</div>
+</body>
+</html>

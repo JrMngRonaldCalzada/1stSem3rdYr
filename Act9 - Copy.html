@@ -1,0 +1,81 @@
+<html>
+<head>
+	<title>JS - LOOPS Activity</title>
+	<style>
+		body{
+		background-color: cyan;
+		}
+		form{
+			position: relative;
+			display: inline-block;
+			left: 45%;
+			top: 45%;
+			}
+			div{
+			position: relative;
+			display: inline-block;
+			left: 50%;
+			top: 45%;
+			}
+	</style>
+	<script>
+		function WhileLoop(){
+			var a = document.loop.txtStart.value;
+			var b = document.loop.txtEnd.value;
+			var c = document.getElementById("output");
+			
+			while(a <= b){
+				c.innerHTML += a + "<br/>";
+				a++; 
+			}
+		}
+			function DoWhileLoop(){
+			var a = document.loop.txtStart.value;
+			var b = document.loop.txtEnd.value;
+			var c = document.getElementById("output");
+			
+			do{
+				c.innerHTML += a + "<br/>";
+				a++;
+				}
+				while (a < b);
+			}
+		function ForLoop(){
+			var a = document.loop.txtStart.value;
+			var b = document.loop.txtEnd.value;
+			var c = document.getElementById("output");
+			
+			for(var x = a; x <= b; x++){
+				c.innerHTML += a + "<br/>";
+				a++;
+			}
+			
+		}
+	function back(){
+		location.href="Finals.html";
+    }
+	</script>
+</head>
+
+<body>
+	<form name="loop">
+		Start #:
+		<input type="number" name="txtStart" />
+		<br/>
+		End #:
+		<input type="number" name="txtEnd" />
+		<br/>
+		
+		<input type="button" value="WHILE" onclick="WhileLoop()" />
+		<input type="button" value="DO-WHILE" onclick="DoWhileLoop()" />
+		<input type="button" value="FOR-LOOP" onclick="ForLoop()" />
+	</form>
+	</br>
+	<div id="output"></br>
+		<i style="color:red">Display the output here<br/></i></br></br></br></br>
+	</div>
+	<div>
+<input type="button" value="Back" onclick="back()">
+</div>
+</body>
+</html>

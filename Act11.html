@@ -1,0 +1,102 @@
+<html>
+<head>
+	<title>ACTIVITY 11</title>
+	<style>
+		body {
+		background-color: aqua;
+}
+	
+	</style>
+	<script>
+	 function buy(frm){
+		 var sTotal = frm.cItems;
+		 var mop = frm.radLabel;
+		 var disc = frm.radDiscount;
+		 var subT = 0;
+		 var modeOFpay ="";
+		 var sale ="";
+		 var total = 0;
+		 var itemDisc = 0;
+
+		 for(x=0; x<sTotal.length; x++){
+			 if(sTotal[x].checked){
+				 subT += parseInt(sTotal[x].value);
+			 }
+		 }
+		 var a ="SUBTOTAL = " + subT;
+		 document.getElementById("sTotal").innerHTML = a;
+
+		 for(y=0; y<mop.length; y++){
+			 if(mop[y].checked){
+				 modeOFpay += mop[y].value;
+			 }
+		 }
+		 var t ="MODE OF PAYMENT = " + modeOFpay;
+		 document.getElementById("mop").innerHTML = t;
+
+		 for(z=0; z<disc.length; z++){
+			if(disc[z].checked){
+				sale += disc[z].value;
+			}
+		}
+		var u ="DISCOUNT = " + sale;
+		document.getElementById("discount").innerHTML = u;
+
+		for(i=0; i<disc.length; i++){
+		 if(disc[0].checked){
+			itemDisc=parseInt(0.1 * subT);
+		 }
+		 if(disc[1].checked){
+			itemDisc=parseInt(0.15 * subT);
+		}
+		if(disc[2].checked){
+			itemDisc=parseInt(0.2 * subT);
+		}
+	 }
+	 var b =subT - itemDisc;
+	 var a ="TOTAL = " + b;
+	 document.getElementById("items").innerHTML = a;
+	 }
+	function back(){
+      location.href="Finals.html";
+
+    }
+	</script>
+</head>
+<body>
+	<form name = formBato>
+	Peripheral Items:<br/>
+		<input type="checkbox" name="cItems" value=" 250" />Mouse (250)
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="cItems" value="1000"/>Flash Drive (1000)<br/>
+		<input type="checkbox" name="cItems" value="500"/>Keyboard (500)&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;<input type="checkbox" name="cItems" value="5000"/>External HD (5000)<br/>
+		<input type="checkbox" name="cItems" value="1500"/>Monitor (1500)
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="cItems" value="700"/>Headset (700)<br/>
+		<br/>
+		Label:<br/>
+		<input type="radio" name="radLabel" value="Cash" /> Cash<br/>
+		<input type="radio" name="radLabel" value="Bank Card" /> Bank Card<br/>
+		<input type="radio" name="radLabel" value="Credit" /> Credit<br/>
+		<br/>
+		Discount:<br/>
+		<input type="radio" name="radDiscount" value="10%" /> 10%
+		<input type="radio" name="radDiscount" value="15%" /> 15%
+		<input type="radio" name="radDiscount" value="20%" /> 20%
+		<br/>
+		<br/>
+		<input type="button" name="btnbuy" value="Buy" onclick="buy(this.form)" />
+
+	</form>
+	<div id="sTotal">
+	</div>
+	<div id="mop">
+	</div>
+	<div id="discount">
+	</div>
+	<div id="items">
+	</div>
+<div></br>
+<input type="button" value="Back" onclick="back()">
+</div>
+</body>
+</html>

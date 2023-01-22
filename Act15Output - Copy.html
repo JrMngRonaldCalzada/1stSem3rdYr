@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>ACTIVITY 15 OUTPUT</title>
+
+		<style>
+	body {
+		background-color: lavender;
+}
+	form{
+			position: relative;
+			display: inline-block;
+			left: 45%;
+			top: 45%;
+			}
+	div{
+	position: relative;
+			display: inline-block;
+			left: 45%;
+			top: 45%;
+			}
+	</style>
+	<script>
+		window.onload = function(){
+		
+		var lowest = localStorage.getItem("Lowest");
+		var highest = localStorage.getItem("Highest");
+		
+		document.getElementById("Output").innerHTML = "Lowest: " + lowest + "<br/>" + "Highest: " + highest ;
+		}
+		function back(){
+		location.href="Act15.html";
+    }
+	</script>
+</head>
+
+<body>
+	<div id="Output"></div>
+	<div>
+	</br>
+<input type="button" value="Back" onclick="back()">
+</div>
+</body>
+</html>

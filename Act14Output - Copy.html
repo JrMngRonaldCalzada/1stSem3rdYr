@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Act 14 Display</title>
+	
+	
+	<style>
+		body {
+		background-color: teal;
+}
+form{
+			position: relative;
+			display: inline;
+			left: 45%;
+			top: 45%;
+			}
+	div{
+	position: relative;
+			display: inline;
+			left: 50%;
+			top: 50%;
+			}
+	</style>
+    
+	
+	
+	<script>
+    window.onload=function(){
+      var res=localStorage.getItem("output");
+      document.getElementById("result").innerHTML= "Total: " + res;
+
+    }
+    function back(){
+      location.href="Act14.html";
+
+    }
+    </script>
+  </head>
+  <body>
+  <div id="result"></div>
+  <input type="button" value="Back" onclick="back()">
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<title>ACTIVITY 14</title>
+		
+		 	<style>
+	body {
+		background-color: teal;
+}
+	form{
+			position: relative;
+			display: inline-block;
+			left: 45%;
+			top: 45%;
+			}
+	div{
+	position: relative;
+			display: block;
+			left: 50%;
+			top: 50%;
+			}
+	</style>
+		
+			<script>
+				function compute(frm) {
+				var a = frm.txtbox1.value;
+				var b = frm.txtbox2.value;
+				var num = frm.MathOp;
+				var indx = num.selectedIndex;
+				var opnum = num.options[indx].value;
+				var output=0;
+				
+				if(opnum=="Addition"){
+				output = parseInt(a) + parseInt(b);
+				}
+				if(opnum=="Subtraction"){
+				output = parseInt(a) - parseInt(b);
+				}
+				if(opnum=="Multiplication"){
+				output = parseInt(a) * parseInt(b);
+				}
+				if(opnum=="Division"){
+				output = parseInt(a) / parseInt(b);
+				}
+				localStorage.setItem("output", output);
+				location.href = "Act14Output.html";
+				}
+				function back(){
+      location.href="Finals.html";
+    }
+			</script>
+	</head>
+
+	<body>
+		<form name="math">
+			First Number:</br>
+			<input type="number" name="txtbox1" /></br>
+			Second Number:</br>
+			<input type="number" name="txtbox2" /></br></br>
+			<input type="button" value="Calculate" onclick="compute(this.form)"
+			/br></input>
+		
+			<select name="MathOp">
+			<option value="Addition"> + </option>
+			<option value="Subtraction"> - </option>
+			<option value="Multiplication"> * </option>
+			<option value="Division"> / </option>
+			</select>
+		</form>
+	</body>
+	<div>
+<input type="button" value="Back" onclick="back()">
+</div>
+</html>

@@ -1,0 +1,425 @@
+<html>
+<head>
+<style>
+	#container{
+		height: 400px;
+		width: 400px;
+		background: blue;
+	}
+	#box{
+		height: 50px;
+		width: 50px;
+		top: 175px;
+		left: 175px;
+		position: relative;
+		background-color: yellow;
+	}
+</style>
+</head>
+<body>
+	<div id="container">
+		<div id="box">
+		</div>
+	</div>
+	<button onclick="moveDownLeft()"><-Down</button>
+	<button onclick="moveUpLeft()"><-Up</button>
+	<button onclick="moveLeft()"><-</button>
+	<button onclick="moveUp()">UP</button>
+	<button onclick="moveDown()">DOWN</button>
+	<button onclick="moveRight()">-></button>
+	<button onclick="moveUpRight()">UP-></button>
+	<button onclick="moveDownRight()">Down-></button>
+	<input type="text" id="output">
+	<input type="text" id="output2">
+	
+<script>
+	var posX=175;
+	var posY=175;
+	var done = false;
+	function moveLeft(){
+		if (posX == 175 && posY == 175){
+			left();
+		}
+		else if (posX == 350 && posY == 175){
+			leftM();
+		}
+	}
+	
+	function moveRight(){
+		if (posX == 175 && posY == 175){
+			right();
+		}
+		else if (posX == 0 && posY == 175){
+			rightM();
+		}
+	}
+	
+	function moveUp(){
+		if (posY == 175 && posX == 175){
+			up();
+		}
+		else if (posY == 350 && posX == 175){
+			upM();
+		}
+	}
+	
+	function moveDown(){
+		if (posY == 175 && posX == 175){
+			down();
+		}
+		else if (posY == 0 && posX == 175){
+			downM();
+		}
+	}
+	
+	function moveUpLeft(){
+		if (posX == 175 && posY == 175){
+			leftup();
+		}
+		else if (posX == 350 && posY == 350){
+			leftupm();
+		}
+	}
+	
+	function moveUpRight(){
+		if (posX == 175 && posY == 175){
+			rightup();
+		}
+		else if (posX == 0 && posY == 350){
+			rightupm();
+		}
+	}
+	
+	function moveDownLeft(){
+		if (posX == 175 && posY == 175){
+			leftdown();
+		}
+		else if (posX == 350 && posY == 0){
+			leftdownm();
+		
+		
+		}
+	}
+	
+	function moveDownRight(){
+		if (posX == 175 && posY == 175){
+			rightdown();
+		}
+		else if (posX == 0 && posY == 0){
+			rightdownm();
+		}
+	}
+		
+	// animation functions
+	
+	var elem;
+	var speed;
+	
+	function left(){
+	posX = 175;
+	elem = document.getElementById("box");
+	speed = setInterval (frame, 10);
+		function frame(){
+			if (posX == 0){
+				clearInterval(speed);
+				//posX = 0;
+				
+			}
+			else{
+			getvalue();
+				posX--;
+				elem.style.left = posX + 'px';
+			}
+		}
+	}
+	
+	function leftM(){
+	posX = 350;
+	elem = document.getElementById("box");
+	speed = setInterval (frame, 10);
+		function frame(){
+			if (posX == 175){
+				clearInterval(speed);
+				//posX = 175;
+				
+			}
+			else{
+			getvalue();
+				posX--;
+				elem.style.left = posX + 'px';
+			}
+		}
+	}
+	
+	function right(){
+	posX = 175;
+	elem = document.getElementById("box");
+	speed = setInterval (frame, 10);
+		function frame(){
+			if (posX == 350){
+				clearInterval(speed);
+				//posX = 350;
+				
+			}
+			else{
+			getvalue();
+				posX++;
+				elem.style.left = posX + 'px';
+			}
+		}
+	}
+	
+	function rightM(){
+	posX = 0;
+	elem = document.getElementById("box");
+	speed = setInterval (frame, 10);
+		function frame(){
+			if (posX == 175){
+				clearInterval(speed);
+				//posX = 175;
+				
+			}
+			else{
+			getvalue();
+				posX++;
+				elem.style.left = posX + 'px';
+			}
+		}
+	}
+	
+	
+	
+	function up(){
+	posY = 175;
+	elem = document.getElementById("box");
+	speed = setInterval (frame, 10);
+		function frame(){
+			if (posY == 0){
+				clearInterval(speed);
+				//posY = 0;
+				
+			}
+			else{
+			getvalue();
+				posY--;
+				elem.style.top =  posY + 'px';
+			}
+		}
+	}
+	
+	function upM(){
+	posY = 350;
+	elem = document.getElementById("box");
+	speed = setInterval (frame, 10);
+		function frame(){
+			if (posY == 175){
+				clearInterval(speed);
+				//posY = 175;
+				
+			}
+			else{
+			getvalue();
+				posY--;
+				elem.style.top =  posY + 'px';
+			}
+		}
+	}
+	
+	function down(){
+	posY = 175;
+	elem = document.getElementById("box");
+	speed = setInterval (frame, 10);
+		function frame(){
+			if (posY == 350){
+				clearInterval(speed);
+				//posY = 350;
+				
+				
+			}
+			else{
+			getvalue();
+				posY++;
+				elem.style.top =  posY + 'px';
+			}
+		}
+	}
+	
+	function downM(){
+	posY = 0;
+	elem = document.getElementById("box");
+	speed = setInterval (frame, 10);
+		function frame(){
+			if (posY == 175){
+				clearInterval(speed);
+				//posY = 175;
+				
+			}
+			else{
+				getvalue();
+				posY++;
+				elem.style.top =  posY + 'px';
+			}
+		}
+	}
+	
+	function leftdown(){
+	posX = 175;
+	elem = document.getElementById("box");
+	speed = setInterval (frame, 10);
+		function frame(){0
+			if (posX == 0){
+				clearInterval(speed);
+				//posX = 0;
+			}
+			else{
+			getvalue();
+				posX--;
+				posY++;
+				elem.style.left = posX + 'px';
+				elem.style.top = posY + 'px';
+			}
+		}
+	}
+	
+	function leftdownm(){
+	posY = 0;
+	elem = document.getElementById("box");
+	speed = setInterval (frame, 10);
+		function frame(){
+			if (posY == 175){
+				clearInterval(speed);
+				//posX = 0;
+			}
+			else{
+			getvalue();
+				posX--;
+				posY++;
+				elem.style.left = posX + 'px';
+				elem.style.top = posY + 'px';
+			}
+		}
+	}
+	
+	function rightdown(){
+	posX = 175;
+	elem = document.getElementById("box");
+	speed = setInterval (frame, 10);
+		function frame(){0
+			if (posX == 350){
+				clearInterval(speed);
+				//posX = 0;
+			}
+			else{
+			getvalue();
+				posX++;
+				posY++;
+				elem.style.left = posX + 'px';
+				elem.style.top = posY + 'px';
+			}
+		}
+	}
+	
+	function rightdownm(){
+	posX = 0;
+	elem = document.getElementById("box");
+	speed = setInterval (frame, 10);
+		function frame(){
+			if (posY == 175){
+				clearInterval(speed);
+				//posX = 0;
+			}
+			else{
+			getvalue();
+				posX++;
+				posY++;
+				elem.style.left = posX + 'px';
+				elem.style.top = posY + 'px';
+			}
+		}
+	}
+	function rightup(){
+	posX = 175;
+	elem = document.getElementById("box");
+	speed = setInterval (frame, 10);
+		function frame(){
+			if (posX == 350){
+				clearInterval(speed);
+				//posX = 0;
+				
+			}
+			else{
+			getvalue();
+				posX++;
+				posY--;
+				elem.style.left = posX + 'px';
+				elem.style.top = posY + 'px';
+			}
+		}
+	}
+	
+	function rightupm(){
+	posX = 0;
+	elem = document.getElementById("box");
+	speed = setInterval (frame, 10);
+		function frame(){
+			if (posY == 175){
+				clearInterval(speed);
+				//posX = 0;
+				
+			}
+			else{
+			getvalue();
+				posY--;
+				posX++;
+				elem.style.left = posX + 'px';
+				elem.style.top = posY + 'px';
+			}
+		}
+	}
+	
+	function leftup(){
+	posX = 175;
+	elem = document.getElementById("box");
+	speed = setInterval (frame, 10);
+		function frame(){
+			if (posX == 0){
+				clearInterval(speed);
+				//posX = 0;
+				
+			}
+			else{
+			getvalue();
+				posY--;
+				posX--;
+				elem.style.left = posX + 'px';
+				elem.style.top = posY + 'px';
+			}
+		}
+	}
+	
+	function leftupm(){
+	posX = 350;
+	elem = document.getElementById("box");
+	speed = setInterval (frame, 10);
+		function frame(){
+			if (posY == 175){
+				clearInterval(speed);
+				//posX = 0;
+				
+			}
+			else{
+			getvalue();
+				posX--;
+				posY--;
+				elem.style.left = posX + 'px';
+				elem.style.top = posY + 'px';
+			}
+		}
+	}
+	function getvalue(){
+		document.getElementById("output").value = "X =" +posX ;
+		document.getElementById("output2").value = "Y =" + posY ;
+	}
+</script>
+</body>
+</html>

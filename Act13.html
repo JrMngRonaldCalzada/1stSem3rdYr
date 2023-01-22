@@ -1,0 +1,94 @@
+<html>
+<head>
+  <title>Activity 13</title>
+  
+  	<style>
+	body {
+		background-color: lime;
+}
+	form{
+			position: relative;
+			display: inline-block;
+			left: 30%;
+			top: 30%;
+			}
+	div{
+	position: relative;
+			display: block;
+			left: 30%;
+			top: 30%;
+			}
+	</style>
+  
+  <script>
+    function register(frm){
+      var name = frm.txtUser.value;
+      var email = frm.txtEmail.value;
+      var gender = frm.radGen.value;
+
+
+      course = " "
+      for (i=0;i<document.form1.chkCourse.length;i++)
+      if (document.form1.chkCourse[i].checked)
+      course += document.form1.chkCourse[i].value + "  "
+
+      var pw = frm.txtPass.value;
+      var cpw = frm.txtConfirm.value;
+
+      if((pw == "") || (cpw == "")){
+				document.getElementById("msg").innerHTML = "No Password Inserted"
+				return false;
+			}
+			else{
+				document.getElementById("msg").innerHTML = "Password Confirmed";
+			}
+
+			if(pw != cpw){
+				document.getElementById("msg").innerHTML = "Password Don't Match";
+			}
+
+
+
+      document.getElementById("output").innerHTML = "Hello " + name + "!" + "<br/>" +
+                                                    "You have successfully Registed with the following details." + "<br/>";
+
+      document.getElementById("output2").innerHTML = "<br/>" + "User Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+name + 
+													  "<br/>" +
+                                                      "Email ID: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + email +"<br/>"+ 
+													  "Gender: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + gender + "<br/>"
+                                                      + "Courses: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + course;
+
+    }
+function back(){
+      location.href="Finals.html";
+    }
+
+  </script>
+</head>
+<body>
+  <form name = form1>
+  <label >User Name: </label>
+  <input style = margin-left:150px type="text" name ="txtUser" /></br>
+  <label>Email ID: </label>
+  <input style = margin-left:163px type="text" name ="txtEmail" /></br>
+  <label>Password: </label>
+  <input style = margin-left:161px type="password" name ="txtPass" /></br>
+  <label>Confirm Password: </label>
+  <input style = margin-left:103px type="password" name ="txtConfirm" /></br>
+  <label>Gender: </label>
+  <input style = margin-left:175px type="radio" name ="radGen" value = Male /> Male
+  <input type="radio" name ="radGen" value = Female /> Female</br>
+  <label>Select Course: </label>
+  <input style = margin-left:133px type="checkbox" id = chk1 name = chkCourse value ="J2SEE" /> J2SEE
+  <input type="checkbox" name = chkCourse value ="J2EE" /> J2EE
+  <input type="checkbox" name = chkCourse value ="Spring Framework" />Spring Framework </br>
+  <input style = margin-left:230px type="button" name ="btnReg" value = Register onclick = register(this.form) /> </br>
+</form>
+<div style = color:red id = output></div>
+<div id = msg > </div>
+<div id = output2></div>
+</body>
+<div>
+<input type="button" value="Back" onclick="back()">
+</div>
+</html>

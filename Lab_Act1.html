@@ -1,0 +1,84 @@
+<html>
+
+<head>
+
+<script languange="Javascript">
+function process(frm){
+	document.getElementById("display").innerHTML = " ";
+	var name = frm.txtname.value;
+	document.getElementById("name").innerHTML = "Name: " + name;
+	var crs = frm.cboCourse;
+	document.getElementById("course").innerHTML = "Course: " + crs.value;
+var yr = frm.optYear;
+var sel_yr ="";
+
+for(j=0; j<yr.length; j++){
+	if(yr[j].checked){
+		sel_yr = yr[j].value;
+		break;
+	}
+}document.getElementById("year").innerHTML = "Year: " + sel_yr;
+
+var sub = frm.chkSubj;
+var subjects ="";
+
+for(j=0; j<sub.length; j++){
+	if(sub[j].checked){
+		subjects += sub[j].value+" ";
+	}
+}
+document.getElementById("subj").innerHTML = "Subjects: " + subjects;
+}
+</script>
+</head>
+
+<body>
+<form>
+	Name:
+	<input type="text" name="txtname" value=""/><b id="noname"></b>
+	<br /><br />
+	Course:
+	<select name="cboCourse">
+		<option value="-1"></option>
+		<option value="BSCS">BSCS</option>
+		<option value="BSIT">BSIT</option>
+		<option value="ComEng">ComEng</option>
+		<option value="ComTech">ComTech</option>
+	</select><b id="nocourse"></b>
+
+	<br /><br />
+	Year:
+	<input type="radio" value="First" name="optYear" checked/>I
+	<input type="radio" value="Second" name="optYear" />II
+	<input type="radio" value="Third" name="optYear" />III
+	<input type="radio" value="Fourth" name="optYear" />IV
+
+	<br /><br />
+	Subjects:<b id="nosubj"></b>
+	<br />
+	<input type="checkbox" value="CP1" name="chkSubj" />CP1
+	<input type="checkbox" value="DBMS" name="chkSubj" />DBMS
+	<br />
+	<input type="checkbox" value="CP2" name="chkSubj" />CP2
+	<input type="checkbox" value="WebProg" name="chkSubj" />WebProg
+	<br />
+	<input type="checkbox" value="CP3" name="chkSubj" />CP3
+	<input type="checkbox" value="IT Project I" name="chkSubj" />IT Project I
+	<br />
+	<input type="checkbox" value="CCF" name="chkSubj" />CCF
+	<input type="checkbox" value="IT Project II" name="chkSubj" />IT Project II
+
+
+	<br /><br />
+	<input type="button" value="Process" onclick="process(this.form)" />
+	<input type="reset" value="Clear" onclick="click(this.form)" />
+</form>
+<em id="display">Display output here</em>
+<div id="name"></div>
+<div id="course"></div>
+<div id="year"></div>
+<div id="subj"></div>
+
+</body>
+
+</html>

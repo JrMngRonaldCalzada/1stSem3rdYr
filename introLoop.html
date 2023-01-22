@@ -1,0 +1,78 @@
+
+JS - Intro to Loops
+Charles Andres Jr
+•
+2:36 PM
+
+JS-IntroToLoops.html
+HTML
+Class comments
+
+JS - Intro to Loops
+<html>
+<head>
+	<title>JS - LOOPS</title>
+	
+	<script>
+		document.write("Displaying 1-10 using While Loop <br/>");
+		
+		var i=1;
+		while(i<11){
+			document.write(i + " ");
+			i++;
+		}
+		
+		document.write("<hr/>");
+		
+		document.write("Displaying 10-1 using Do While Loop<br/>");
+		var x=10;
+		do{
+			document.write(x + "<br/>");
+			x--;
+		}while(x>0);
+		
+		document.write("<hr/>");
+		document.write("Displaying 100-110 using For Loop<br/>");
+		
+		for(var y=100;y<111;y++){
+			document.write(y + " ");
+		}
+		
+		document.write("<hr/>");
+		document.write("Displaying ODD numbers in 1-10 using DO LOOP<br/>");
+		var e = 1;
+		do{
+			document.write(e + " ");
+			e += 2;
+		}while(e<=10);
+
+		document.write("<hr/>");
+		document.write("Displaying EVEN numbers in 1-10 using FOR LOOP<br/>");		
+		
+		for(var t = 2; t<=10; t+=2){
+				document.write(t + " ");
+		}		
+		
+		function whileloop(frm){
+			var a = frm.txtnumb.value;
+			var s = 1;
+			var res = document.getElementById("result");
+			while(s<=a){
+				res.innerHTML += s + "<br/>";
+				s++; //s=s+1;
+			}
+			
+		}
+				
+	</script>
+</head>
+<body>
+	<hr/>
+	<form>
+		<input type="number" name="txtnumb"/>
+		<input type="button" value="While" onclick="whileloop(this.form)"/>
+	</form>
+	<div id="result">
+	</div>
+</body>
+</html>

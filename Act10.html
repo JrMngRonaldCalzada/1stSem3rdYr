@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>Activity 10</title>
+	<style>
+			body {
+		background-color: gold;
+}
+	form{
+			position: relative;
+			display: inline-block;
+			left: 45%;
+			top: 45%;
+			}
+	div{
+	position: relative;
+			display: inline-block;
+			left: 45%;
+			top: 45%;
+			}
+	</style>
+	<script>
+		function hm(){
+		
+		var disc = document.item.otbura.value;
+		
+		sum=0
+		
+		for (r=0; r <= document.item.items.length; r++)
+		{
+			if (document.item.items[r].checked)
+			{
+			sum = sum +parseInt(document.item.items[r].value) - disc
+			}
+		}
+		var output = document.getElementById("total").innerHTML = output + sum;
+	}
+	function back(){
+		location.href="Finals.html";
+    }
+	</script>
+</head>
+<body>
+	<form name="item">
+		Items:<br/>
+		<input type="checkbox" name="items" value="250"/>Mouse(250)
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="items" value="1000"/>Flash Drive16GB(1000)<br/>
+		<input type="checkbox" name="items" value="500"/>Keyboard(500)&nbsp;   
+		&nbsp;<input type="checkbox" name="items" value="5000"/>External HD 1TB(5000)<br/>
+		<input type="checkbox" name="items" value="1500"/>Monitor(1500)
+		&nbsp;&nbsp;&nbsp;<input type="checkbox" name="items" value="700"/>Headset(700)<br/><br/>
+		Discount:
+		<input type="number" name="otbura" /><br/><br/>
+		<input type="button" name="elibap" value="Buy" onclick="hm()"/>
+		
+	</form>
+	<div id="total">
+	</div>
+<div>
+<input type="button" value="Back" onclick="back()">
+</div>
+</body>
+</html>

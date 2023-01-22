@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>ACTIVITY 15 PASSING OF VALUES 2.0</title>
+		<style>
+	body {
+		background-color: lavender;
+}
+	form{
+			position: relative;
+			display: inline-block;
+			left: 45%;
+			top: 45%;
+			}
+	div{
+	position: relative;
+			display: inline-block;
+			left: 45%;
+			top: 45%;
+			}
+	</style>
+	<script>
+		function Submit(frm) {
+		var n1 = frm.num1.value;
+		var n2 = frm.num2.value;
+		var n3 = frm.num3.value;
+		
+		var lowest = Math.min(n1, n2, n3);
+		var highest = Math.max(n1, n2, n3);
+		
+		localStorage.setItem("Lowest", lowest);
+		localStorage.setItem("Highest", highest);
+		location.href = "Act15Output.html";
+		}
+		function back(){
+		location.href="Finals.html";
+    }
+	</script>
+</head>
+
+<body>
+	<form>
+		number 1:
+		<input type="number" name="num1" ></br>
+		number 2:
+		<input type="number" name="num2" ></br>
+		number 3:
+		<input type="number" name="num3" ></br></br>
+		
+		<input type="button" name="btnGo" value="Go" onclick="Submit(this.form)" >
+	</form>
+</body>
+<div>
+	</br>
+<input type="button" value="Back" onclick="back()">
+</div>
+</html>

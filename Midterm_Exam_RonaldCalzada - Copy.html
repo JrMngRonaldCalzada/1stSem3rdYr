@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>Midterm Exam IPT101 Ronald A. Calzada</title>
+		<script>
+			function button1(frm1) {
+				var a = frm1.txtbox1.value;
+				var b = a.length;
+				document.getElementById("outputs").innerHTML = b;
+			}
+			
+			function button2(frm2) {
+				var c = frm2.txtbox1.value;
+				var d  = 0;
+			
+				for (var x = 0; x < c.length; x++)
+					{
+						d = c[0];
+					}
+				document.getElementById("outputs").innerHTML = d;
+			}
+			
+			function button3(frm3) {
+				var e = frm3.txtbox1.value;
+				var f  = 0;
+			
+				for (var y = 0; y < e.length; y++)
+					{
+						f = e[y];
+					}
+				document.getElementById("outputs").innerHTML = f;
+			}
+			
+			function button4(frm4) {
+			var g = frm4.txtbox1.value;
+			var h = 0;
+			
+			for (var z = 0; z < g.length; z++)
+			{
+				h += parseInt(g[z]);
+			}
+			document.getElementById("outputs").innerHTML = h;
+		}
+			
+		</script>
+	</head>
+	<body>
+		<form name= MidExam>
+		Enter a number:
+		<input type="textbox" name="txtbox1" />
+		</br>
+		<input type="button" name="btn1" value="Count" onclick="button1(this.form)" />
+		<input type="button" name="btn2" value="First" onclick="button2(this.form)" />
+		<input type="button" name="btn3" value="Last" onclick="button3(this.form)" />
+		<input type="button" name="btn4" value="Sum" onclick="button4(this.form)" />
+		
+		</form>
+		<div id="outputs">
+		<i>Display the result here!</br></i>
+		</div>
+	</body>
+</html>

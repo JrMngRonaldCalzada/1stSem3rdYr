@@ -1,0 +1,115 @@
+<html>
+	<head>
+		<title>ACTIVITY 12</title>
+		<style>
+	body {
+		background-color: yellow;
+}
+	form{
+			position: relative;
+			display: inline-block;
+			left: 40%;
+			top: 35%;
+			}
+	div{
+			position: relative;
+			display: block;
+			left: 70%;
+			top: 2%;
+			}
+	</style>
+		<script>
+		function Process(frm) {
+		let name = document.querySelector("#name")
+		document.getElementById("igado").innerHTML = "Name: " + name.value;
+		
+		
+		var crs = frm.selCourse;
+		var idx = crs.selectedIndex;
+		var optcrs = crs.options[idx].value;
+		document.getElementById("kilawin").innerHTML = "Course: " + optcrs;
+		
+		
+			var subjs = frm.chkSubjs;
+			var b = "Subjects: </br>";
+			
+			for(i=0; i < subjs.length; i++){
+				if(subjs[i].checked){
+					b += subjs[i].value + "</br>";
+				}
+				else if((subjs[0].checked==false) && (subjs[1].checked==false) && (subjs[2].checked==false) && (subjs[3].checked==false) && (subjs[4].checked==false) && (subjs[5].checked==false) && (subjs[6].checked==false) && (subjs[7].checked==false)){
+					b = "None!";
+				}
+			document.getElementById("dinuguan").innerHTML = b;
+		}
+		
+		var yr = frm.radYear;
+		var sel_yr="";
+		
+		for(j=0; j < yr.length; j++){
+			if(yr[j].checked){
+				sel_yr = yr[j].value;
+				break;
+				}
+			}
+			var a = "Year: " + sel_yr;
+			document.getElementById("sweetmeat").innerHTML = a;
+			}
+			
+			function clr() {
+			document.getElementById("igado").innerHTML = "";
+			document.getElementById("kilawin").innerHTML = "";
+			document.getElementById("dinuguan").innerHTML = "";
+			document.getElementById("sweetmeat").innerHTML = "";
+			}
+			function back(){
+      location.href="Finals.html";
+
+    }
+		</script>
+	</head>
+	<body>
+		<form>
+			Name:
+			<input id=name><br></br>
+			Course: 
+			<select name="selCourse">
+				<option value="BSIT">BSIT</option>
+				<option value="BSCS">BSCS</option>
+				<option value="BSCE">BSCE</option>
+				<option value="BSED">BSED</option>
+			</select></br></br>
+			Year: 
+			<input type="radio" name="radYear" value="I"/> I
+			<input type="radio" name="radYear" value="II"/> II
+			<input type="radio" name="radYear" value="III"/> III
+			<input type="radio" name="radYear" value="IV"/> IV
+			</br></br>
+			Subjects: </br>
+			<input type="checkbox" name="chkSubjs" value="CP1" /> CP1 
+			<input type="checkbox" name="chkSubjs" value="DBMS" /> DBMS</br>
+			<input type="checkbox" name="chkSubjs" value="CP2" /> CP2 
+			<input type="checkbox" name="chkSubjs" value="WebProg" /> WebProg</br>
+			<input type="checkbox" name="chkSubjs" value="CP3" /> CP3
+			<input type="checkbox" name="chkSubjs" value="IT Project I" /> IT Project I</br>
+			<input type="checkbox" name="chkSubjs" value="CCF" /> CCF
+			<input type="checkbox" name="chkSubjs" value="IT Project II" /> IT Project II</br></br>
+			
+			<input type="button" name="btnProcess" value="Process" onclick="Process(this.form)" />
+			<input type="reset" name="btnClear" value="Clear" onclick="clr()"/>
+		</form></br>
+		<div id="igado"></br>
+		Display output here
+		</div>
+		<div id="kilawin">
+		</div>
+		<div id="dinuguan">
+		</div>
+		<div id="sweetmeat">
+		</div>
+		<div>
+		</br></br>
+<input type="button" value="Back" onclick="back()">
+</div>
+	</body>
+</html>
