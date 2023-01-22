@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<script>
+			function MyWeb() {
+			let StudNum = document.querySelector("#StudNum");
+			let StudName = document.querySelector("#StudName");
+			let Gen = document.querySelector("#Gen");
+			let Crs = document.querySelector("#Crs");
+			let Dept = document.querySelector("#Dept");
+			let ContactNum = document.querySelector("#ContactNum");
+
+			
+			let process = document.querySelector("#process");
+			
+			process.innerHTML = "Student Number: " + StudNum.value
+			+ "<br>" + "Student Name: " StudName.value;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<label>Student Number</label><br/>
+		<input id=StudNum></input>
+		
+		<label>Student Name</label><br/>
+		<input id=StudName></input>
+		
+		<label>Gender</label><br/>
+		<input id=Gen></input>
+		
+		<label>Course</label><br/>
+		<input id=Crs></input>
+		
+		<label>Department</label><br/>
+		<input id=Dept></input>
+		
+		<label>Contact Number</label><br/>
+		<input id=ContactNum></input>
+		<br/>
+		<button onclick=MyWeb()>Process</button>
+		<h1 id=result></h1>
+	</body>
+</html>

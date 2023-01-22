@@ -1,23 +1,6 @@
 <html>
 <head>
 	<title>Activity 10</title>
-	<style>
-			body {
-		background-color: gold;
-}
-	form{
-			position: relative;
-			display: inline-block;
-			left: 45%;
-			top: 45%;
-			}
-	div{
-	position: relative;
-			display: inline-block;
-			left: 45%;
-			top: 45%;
-			}
-	</style>
 	<script>
 		function hm(){
 		
@@ -29,14 +12,11 @@
 		{
 			if (document.item.items[r].checked)
 			{
-			sum = sum +parseInt(document.item.items[r].value) - disc
+			sum = sum + parseInt(document.item.items[r].value) - disc
 			}
+			document.getElementById("total").innerHTML = "Total: " + sum
 		}
-		var output = document.getElementById("total").innerHTML = output + sum;
 	}
-	function back(){
-		location.href="Finals.html";
-    }
 	</script>
 </head>
 <body>
@@ -55,8 +35,6 @@
 	</form>
 	<div id="total">
 	</div>
-<div>
-<input type="button" value="Back" onclick="back()">
-</div>
+
 </body>
 </html>

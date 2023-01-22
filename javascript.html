@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>FIRST JAVASCRIPT</title>
+	
+	<script language="JavaScript">
+		document.write("Welcome to JavaScript");
+
+		alert("Welcome! Enjoy JavaScript!");
+		
+		function clickMe(){
+			alert("You have clicked the button with function!");
+		}
+		
+		function dispName(){
+			var name;
+			name = document.frmJS.txtName.value;
+			
+			alert("Hi, " + name);
+		}
+		
+		function dispCourse(){
+			var crs = document.frmJS.txtCourse.value;
+			var x = document.getElementById("showname");
+			x.innerHTML=crs;
+		}
+	</script>
+</head>
+
+<body>
+	
+	<form name="frmJS">
+		Button with inline alert:
+		<input type="button" name="btnClickMe" value="Click me" onclick="alert('You have click the button!')" />
+		<br/>
+		Button with java function:
+		<input type="button" name="btnClick" value="Click me too!" onclick="clickMe()" />
+		<br/><br/>
+		Display a name via alert:<br/>
+		<label>Name: </label><input type="text" name="txtName" value="" />
+		<input type="button" name="btnGo" value="Go" onclick="dispName()" />
+		
+		<br/><br/>
+		<label>Course: </label><input type="text" name="txtCourse" value="" />
+		<input type="button" name="btnProcess" value="Process" onclick="dispCourse()" />
+	</form>
+	<div id="showname"></div>
+
+</body>
+</html>

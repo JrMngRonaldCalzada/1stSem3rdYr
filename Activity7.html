@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>Activity 7</title>
+<style>
+  body {
+  background-color: Blue; text-align: center; color: gold
+  }
+  label {
+  font-family: Helvetica; font-size: 25; 
+  }
+  h1 {
+  color: white
+  }
+</style>
+</head>
+
+<body>
+  <h1>Student Information</h1>
+
+
+  <label>Student Number</label><br>
+  <input id=studnum><br>
+
+  <label>Student Name</label><br>
+  <input id=studname><br>
+
+  <label>Gender</label><br>
+  <input id=gender><br>
+
+  <label>Course</label><br>
+  <input id=course><br>
+
+  <label>Department</label><br>
+  <input id=dept><br>
+
+  <label>Contact</label><br>
+  <input id=contact><br>
+
+
+  <button onclick=process()>Process</button>
+  <h1 id=result></h1>
+</body>
+
+<script>
+  function process(){
+    let sn = document.querySelector("#studnum");
+    let name = document.querySelector("#studname");
+    let gender = document.querySelector("#gender");
+    let course = document.querySelector("#course");
+    let dpt = document.querySelector("#dept");
+    let contact = document.querySelector("#contact");
+    let result = document.querySelector("#result");
+
+    result.innerHTML = "Student Number: " + studnum.value
+    + "<br>" + "Name: " + studname.value
+    + "<br>" + "Gender: " + gender.value
+    + "<br>" + "Course: " + course.value
+    + "<br>" + "Department: " + dept.value
+    + "<br>" + "Contact: " + contact.value;
+  }
+</script>
+</html>
